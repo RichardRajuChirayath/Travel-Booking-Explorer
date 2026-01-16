@@ -1,4 +1,4 @@
-# <p align="center">✈️ Travel Explorer Pro</p>
+# <p align="center">✈️ Travel Explorer </p>
 
 <div align="center">
 
