@@ -1,0 +1,102 @@
+{
+    "destinations": [
+        {
+            "id": "d1",
+            "name": "Paris",
+            "country": "France",
+            "description": "The city of lights and iconic landmarks.",
+            "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+            "rating": 4.8,
+            "tags": [
+                "romantic",
+                "culture",
+                "history"
+            ]
+        },
+        {
+            "id": "d2",
+            "name": "Tokyo",
+            "country": "Japan",
+            "description": "A blend of ultra-modern and traditional culture.",
+            "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf",
+            "rating": 4.9,
+            "tags": [
+                "modern",
+                "food",
+                "tradition"
+            ]
+        },
+        {
+            "id": "d3",
+            "name": "Bali",
+            "country": "Indonesia",
+            "description": "Tropical paradise with stunning beaches and temples.",
+            "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
+            "rating": 4.7,
+            "tags": [
+                "beach",
+                "relax",
+                "nature"
+            ]
+        }
+    ],
+    "packages": [
+        {
+            "id": "d1",
+            "destinationId": "d1",
+            "name": "Paris Explorer",
+            "price": 1200,
+            "durationDays": 5,
+            "tier": "Standard",
+            "maxCapacity": 20,
+            "availableSlots": 12,
+            "includedServices": [
+                "Flight",
+                "Hotel",
+                "Breakfast"
+            ]
+        },
+        {
+            "id": "d2",
+            "destinationId": "d2",
+            "name": "Tokyo High Tech",
+            "price": 2500,
+            "durationDays": 7,
+            "tier": "Luxury",
+            "maxCapacity": 10,
+            "availableSlots": 4,
+            "includedServices": [
+                "Flight",
+                "Hotel",
+                "Dinner",
+                "Guide"
+            ]
+        },
+        {
+            "id": "d3",
+            "destinationId": "d3",
+            "name": "Bali Paradise",
+            "price": 950,
+            "durationDays": 6,
+            "tier": "Budget",
+            "maxCapacity": 15,
+            "availableSlots": 8,
+            "includedServices": [
+                "Flight",
+                "Villa",
+                "Breakfast",
+                "Snorkeling"
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": "u1",
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john.doe@example.com",
+            "role": "Traveler"
+        }
+    ],
+    "bookings": []
+}

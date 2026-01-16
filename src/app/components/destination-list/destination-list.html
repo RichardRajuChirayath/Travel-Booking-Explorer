@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>Explore Top Destinations</h2>
+
+    <div class="filter-bar">
+        <mat-form-field appearance="outline" class="search-field">
+            <mat-label>Search Places or Country</mat-label>
+            <input matInput [(ngModel)]="searchText" placeholder="Ex. Japan">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <div class="rating-filter">
+            <label>Min Popularity (Rating): {{ minRating }}</label>
+            <mat-slider min="0" max="5" step="0.1" showTickMarks discrete>
+                <input matSliderThumb [(ngModel)]="minRating">
+            </mat-slider>
+        </div>
+    </div>
+
+    <div class="loading-state" *ngIf="!(destinations$ | async); else listContent">
+        <p>Loading amazing places...</p>
+    </div>
+
+    <ng-template #listContent>
+        <div class="grid">
+            <mat-card class="dest-card"
+                *ngFor="let dest of (destinations$ | async) | filterDestinations:searchText:minRating"
+                [ngStyle]="{'border-top': '4px solid ' + selectedColor}" [appHighlightTopRated]="dest.rating">
+
+                <img mat-card-image [src]="dest.imageUrl" [alt]="dest.name" class="card-image">
+                <mat-card-header>
+                    <div class="header-content">
+                        <mat-card-title>
+                            {{ dest.name }}
+                            <!-- Demo: Highlight Tokyo as a Promo -->
+                            <span *ngIf="dest.name === 'Tokyo'" appHighlightPromo>HOT DEAL</span>
+                        </mat-card-title>
+                        <mat-card-subtitle>{{ dest.country }}</mat-card-subtitle>
+                    </div>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{ dest.description }}</p>
+                    <div class="rating-badge" [ngClass]="getRatingColor(dest.rating)">
+                        <mat-icon>star</mat-icon> {{ dest.rating }}
+                    </div>
+                    <mat-chip-set aria-label="Tags">
+                        <mat-chip *ngFor="let tag of dest.tags">{{ tag }}</mat-chip>
+                    </mat-chip-set>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button color="primary" [routerLink]="['/package', dest.id]">View Packages</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </ng-template>
+</div>

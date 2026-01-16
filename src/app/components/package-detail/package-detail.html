@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="header-nav">
+        <button mat-icon-button routerLink="/destinations">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <h2>Package Details</h2>
+    </div>
+
+    @if (currentPackage(); as pkg) {
+    <div class="package-header">
+        <div class="title-section">
+            <h1>{{ pkg.name }}</h1>
+            <mat-chip-set>
+                <mat-chip>{{ pkg.tier }}</mat-chip>
+                <mat-chip>{{ pkg.durationDays }} Days</mat-chip>
+            </mat-chip-set>
+        </div>
+        <div class="price-section">
+            <span class="price">\${{ pkg.price }}</span>
+            <span class="sub-price">per person</span>
+        </div>
+    </div>
+
+    @if (pkg.availableSlots < 5) { <div class="urgency-banner">
+        <mat-icon>hourglass_empty</mat-icon>
+        Only {{ pkg.availableSlots }} spots left!
+</div>
+}
+
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a mat-tab-link routerLink="overview" routerLinkActive #rla1="routerLinkActive" [active]="rla1.isActive"> Overview
+    </a>
+    <a mat-tab-link routerLink="itinerary" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive"> Itinerary
+    </a>
+    <a mat-tab-link routerLink="reviews" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive"> Reviews
+    </a>
+</nav>
+<mat-tab-nav-panel #tabPanel>
+    <div class="tab-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-tab-nav-panel>
+
+<div class="actions">
+    <button mat-raised-button color="accent" class="book-btn" [routerLink]="['/book', pkg.id]">
+        Book This Package
+    </button>
+</div>
+} @else {
+<div class="loading">
+    <p>Loading package details...</p>
+</div>
+}
+</div>

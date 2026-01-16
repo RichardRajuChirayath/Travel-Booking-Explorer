@@ -1,0 +1,73 @@
+.container {
+    padding: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.title-section h1 {
+    margin: 0 0 12px 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.price-section {
+    text-align: right;
+    background: #e8f5e9;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.price {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.sub-price {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.urgency-banner {
+    background: #fff3e0;
+    color: #e65100;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.tab-content {
+    padding: 32px 0;
+    min-height: 200px;
+}
+
+.actions {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.book-btn {
+    padding: 8px 32px;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,68 @@
+<div class="booking-container">
+    <h2>Confirm Your Reservation</h2>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+
+        <!-- Full Name -->
+        <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="fullName" placeholder="John Doe">
+            <mat-error *ngIf="bookingForm.get('fullName')?.hasError('required')">
+                Name is required.
+            </mat-error>
+            <mat-error *ngIf="bookingForm.get('fullName')?.hasError('minlength')">
+                Name must be at least 3 characters.
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="outline">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email" type="email" placeholder="john@example.com">
+            <mat-error *ngIf="bookingForm.get('email')?.hasError('required')">
+                Email is required.
+            </mat-error>
+            <mat-error *ngIf="bookingForm.get('email')?.hasError('email')">
+                Please enter a valid email.
+            </mat-error>
+        </mat-form-field>
+
+        <div class="row">
+            <!-- Travelers -->
+            <mat-form-field appearance="outline" class="half-width">
+                <mat-label>Travelers</mat-label>
+                <input matInput type="number" formControlName="travelers" min="1" max="10">
+                <mat-error *ngIf="bookingForm.get('travelers')?.hasError('min')">
+                    At least 1 traveler required.
+                </mat-error>
+                <mat-error *ngIf="bookingForm.get('travelers')?.hasError('max')">
+                    Max 10 travelers allowed.
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Date Picker -->
+            <mat-form-field appearance="outline" class="half-width">
+                <mat-label>Travel Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="bookingDate">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="bookingForm.get('bookingDate')?.hasError('required')">
+                    Date is required.
+                </mat-error>
+                <mat-error *ngIf="bookingForm.get('bookingDate')?.hasError('pastDate')">
+                    Date must be in the future.
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- Special Requests -->
+        <mat-form-field appearance="outline">
+            <mat-label>Special Requests</mat-label>
+            <textarea matInput formControlName="specialRequests" rows="3"></textarea>
+        </mat-form-field>
+
+        <!-- Submit Button -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="bookingForm.invalid">
+            Confirm Booking
+        </button>
+    </form>
+</div>

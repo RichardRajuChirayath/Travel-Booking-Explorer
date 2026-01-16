@@ -1,0 +1,42 @@
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of, BehaviorSubject } from 'rxjs';
+import { User, UserRole, AppUser } from '../models/user.model';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class UserService {
+    private http = inject(HttpClient);
+    private apiUrl = 'api/users';
+
+    private currentUserSubject = new BehaviorSubject<User | null>(null);
+    currentUser$ = this.currentUserSubject.asObservable();
+
+    constructor() {
+        // Initial mock login check
+        const savedUser = localStorage.getItem('user');
+        if (savedUser) {
+            this.currentUserSubject.next(JSON.parse(savedUser));
+        }
+    }
+
+    login(email: string, password: string): Observable<User> {
+        // Simulate API call
+        const mockUser = new AppUser('u1', 'John', 'Doe', email, UserRole.TRAVELER);
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('user', JSON.stringify(mockUser));
+        this.currentUserSubject.next(mockUser);
+        return of(mockUser);
+    }
+
+    logout(): void {
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('user');
+        this.currentUserSubject.next(null);
+    }
+
+    getCurrentUser(): User | null {
+        return this.currentUserSubject.value;
+    }
+}
