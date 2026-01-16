@@ -1,101 +1,102 @@
-# ✈️ Travel Booking Explorer
+# <p align="center">✈️ Travel Explorer Pro</p>
 
 <div align="center">
 
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![Material Design](https://img.shields.io/badge/Material%20Design-757575?style=for-the-badge&logo=material-design&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![GitHub last commit](https://img.shields.io/github/last-commit/RichardRajuChirayath/Travel-Booking-Explorer?style=for-the-badge&color=6366f1)
+![GitHub repo size](https://img.shields.io/github/repo-size/RichardRajuChirayath/Travel-Booking-Explorer?style=for-the-badge&color=a855f7)
+![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&color=3b82f6)
+![Angular](https://img.shields.io/badge/Angular_21-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=25&pause=1000&color=F7F7F7&center=true&vCenter=true&width=600&lines=Explore+Exotic+Destinations;Book+Your+Dream+Vacation;Manage+Your+Trip+In+Real-Time;built+with+Angular+19+%26+Material+Design)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Outfit&weight=800&size=36&pause=1000&color=6366F1&center=true&vCenter=true&width=800&lines=NEXT-GEN+TRAVEL+EXPERIENCE;REACTIVE+BOOKING+ENGINE;STUNNING+USER+INTERFACES;POWERED+BY+ANGULAR+21)](https://git.io/typing-svg)
+
+<br/>
+
+---
+
+**Travel Explorer Pro** is a high-performance, aesthetically driven travel booking architecture. Built on the bleeding edge of **Angular 21**, it delivers a seamless, immersive experience for modern travelers.
+
+[✨ Features](#-key-capabilities) • [🏗️ Architecture](#-system-architecture) • [🚀 Deploy](#-getting-started) • [🎨 Aesthetics](#-design-language)
+
+---
 
 </div>
 
-<p align="center">
-  <b>A modern, full-featured travel booking application built with Angular 19 and Angular Material.</b>
-  <br>
-  <i>Features dynamic routing, reactive forms, state management, and a mock REST API.</i>
-</p>
+## 📸 Visual Experience
+
+<div align="center">
+  <img src="https://github.com/RichardRajuChirayath/Travel-Booking-Explorer/blob/main/public/travel_explorer_banner.png?raw=true" width="100%" style="border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15);" alt="Project Banner">
+</div>
+
+<br/>
+
+## 🌟 Key Capabilities
+
+### ⚡ Cinematic Discovery
+Experience a destination-first approach. Our **Explorer Engine** features dynamic filtering, smart rating signals, and a high-glow "Top Rated" algorithm that brings the world's best places to the forefront.
+
+### 🌊 Reactive Booking Core
+Powered by a **Bidirectional Event Stream**, the booking engine ensures zero data-stale moments. Validated Reactive Forms prevent date errors before they happen, while beautiful Material Dialogs provide instant psychological closure.
+
+### 🎯 Pro Dashboards
+Manage trips with a data-centric view. Features live trip statistics, real-time cancellation tokens, and an expandable itinerary history—all managed via a persistent state management service.
 
 ---
 
-## 🌟 Features
+## 🏗️ System Architecture
 
-### 🗺️ Destination Discovery
-- **Dynamic Filtering**: Instantly search destinations by name or country.
-- **Interactive Ratings**: Filter destinations based on popularity using a slider.
-- **Visual Highlights**: Premium destinations (rating > 4.8) glow with a golden border.
-
-### 📦 Smart Packages
-- **Detailed Itineraries**: View comprehensive package details including daily schedules and reviews.
-- **Real-time Availability**: "Urgency banners" appear when slots are running low.
-- **Nested Navigation**: Seamlessly switch between Overview, Itinerary, and Reviews.
-
-### 📝 Secure Booking
-- **Smart Forms**: Validated reactive forms ensure data integrity (e.g., no past dates allowed).
-- **Direct Booking**: "Book Now" links pre-fill package details automatically.
-- **Confirmation**: Beautiful Material Dialogs confirm your successful reservation.
-
-### 👤 User Dashboard
-- **Trip Management**: View all your upcoming and past trips in a sortable data table.
-- **Quick Stats**: Animated expansion panels show your travel summary.
-- **Actionable Insights**: Cancel bookings directly from the dashboard with tooltip guidance.
+| Tier | Technology Stack |
+| :--- | :--- |
+| **Core Engine** | Angular 21 (Standalone Architecture) |
+| **Data Orchestration** | RxJS BehaviorSubjects (Observable Pattern) |
+| **UI Design System**| Angular Material + Custom SCSS Glassmorphism |
+| **API Middleware** | JSON Server (Simulated RESTful Microservice) |
+| **Tooling** | Angular build-system, Concurrently, Prettier |
 
 ---
 
-## 🛠️ Tech Stack
+## 🎨 Design Language
 
-- **Frontend**: Angular 19 (Standalone Components)
-- **UI Framework**: Angular Material (Custom Theme)
-- **State Management**: RxJS (BehaviorSubjects, Observables)
-- **Forms**: Angular Reactive Forms
-- **Data Mocking**: `json-server` for full REST API simulation
-- **Tooling**: Angular CLI, ESLint
+We follow a **"Premium-First"** design philosophy:
+- **Depth & Dimension**: Subtle card overlaps and $12$ different shadow levels.
+- **Micro-Animations**: Staggered fade-ins and scale-on-hover interactions.
+- **Accessibility**: High-contrast typography and semantic HTML5 structures.
+- **Glassmorphism**: Blurred backdrops on navigation and interactive overlays.
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Node.js (v18 or higher)
-- npm
+### 1. Zero-Config Setup
+```bash
+git clone https://github.com/RichardRajuChirayath/Travel-Booking-Explorer.git
+cd Travel-Booking-Explorer
+```
 
-### Installation
+### 2. Intelligent Installation
+```bash
+npm install
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/RichardRajuChirayath/Travel-Booking-Explorer.git
-   cd Travel-Booking-Explorer
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the Mock API & Application**
-   ```bash
-   npm run dev
-   ```
-   *This command uses `concurrently` to run both the Angular frontend (port 4200) and the JSON Server (port 3001).*
-
-4. **Navigate to the App**
-   Open your browser and visit: `http://localhost:4200`
+### 3. Launch Development Environment
+```bash
+npm run dev
+```
+> **Note:** This command triggers the **Concurrent Execution Engine**, spinning up the mock API ($Port 3001$) and the Frontend ($Port 4200$) in a single terminal session.
 
 ---
 
-## 📸 Screenshots
-
-| **Destination Explorer** | **Booking Experience** |
-|:---:|:---:|
-|Search, filter, and explore top-rated destinations with a responsive grid layout.|Seamless booking process with real-time validation and confirmation dialogs.|
-
-| **Package Details** | **User Dashboard** |
-|:---:|:---:|
-|Rich details with tabbed navigation for Itineraries and Reviews.|Manage your bookings and view travel statistics in a clean interface.|
+## 🗺️ Roadmap
+- [x] Angular 21 Core Migration
+- [x] Immersive Hero Header Implementation
+- [x] Reactive Dashboard State Sync
+- [ ] AI-Powered Destination Recommendations (Coming Soon)
+- [ ] Multi-Vendor Payment Gateway Integration
 
 ---
 
-
+<div align="center">
+  <p>Built with ❤️ by <b>Richard Raju Chirayath</b></p>
+  <p><i>Transforming How The World Explores.</i></p>
+</div>
