@@ -2,7 +2,6 @@
 
 <div align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/RichardRajuChirayath/Travel-Booking-Explorer?style=for-the-badge&color=6366f1)
 ![GitHub repo size](https://img.shields.io/github/repo-size/RichardRajuChirayath/Travel-Booking-Explorer?style=for-the-badge&color=a855f7)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&color=3b82f6)
 ![Angular](https://img.shields.io/badge/Angular_21-DD0031?style=for-the-badge&logo=angular&logoColor=white)
@@ -91,12 +90,10 @@ npm run dev
 - [x] Angular 21 Core Migration
 - [x] Immersive Hero Header Implementation
 - [x] Reactive Dashboard State Sync
-- [ ] AI-Powered Destination Recommendations (Coming Soon)
-- [ ] Multi-Vendor Payment Gateway Integration
+
 
 ---
 
 <div align="center">
-  <p>Built with ❤️ by <b>Richard Raju Chirayath</b></p>
   <p><i>Transforming How The World Explores.</i></p>
 </div>
