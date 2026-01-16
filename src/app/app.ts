@@ -9,18 +9,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, Navbar, MatProgressSpinnerModule],
-  template: `
-    <app-navbar></app-navbar>
-    <main>
-      <div *ngIf="loadingService.loading$ | async" class="loading-overlay">
-        <mat-spinner diameter="50"></mat-spinner>
-      </div>
-      <router-outlet></router-outlet>
-    </main>
-  `,
+  templateUrl: './app.html',
   styles: [`
     main {
-      padding: 20px;
       min-height: calc(100vh - 64px);
       position: relative;
     }

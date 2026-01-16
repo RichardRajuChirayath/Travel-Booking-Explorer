@@ -1,4 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles & Variables */
+:root {
+    --primary-color: #3f51b5;
+    --accent-color: #ff4081;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Material Overrides for Better Aesthetics */
+.mat-mdc-card {
+    border-radius: 12px !important;
+    box-shadow: var(--shadow-light) !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: var(--card-bg) !important;
+}
+
+.mat-mdc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium) !important;
+}
+
+.mat-mdc-button.mat-unthemed {
+    color: var(--text-primary);
+}
+
+.mat-mdc-unelevated-button.mat-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Global Utility Classes */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.anime-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.6s forwards ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

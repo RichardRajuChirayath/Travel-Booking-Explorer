@@ -1,10 +1,22 @@
-<mat-toolbar color="primary">
-    <span routerLink="/" style="cursor: pointer">Travel Explorer</span>
-    <span class="spacer"></span>
-    <button mat-button routerLink="/destinations" routerLinkActive="active-link">Destinations</button>
-    <button mat-button routerLink="/booking" routerLinkActive="active-link">Quick Book</button>
-    <button mat-button routerLink="/dashboard" routerLinkActive="active-link">
-        <mat-icon>dashboard</mat-icon>
-        Dashboard
-    </button>
+<mat-toolbar color="default">
+    <div class="nav-container">
+        <div class="logo-section" routerLink="/">
+            <mat-icon class="logo-icon">flight_takeoff</mat-icon>
+            <span>Travel Explorer</span>
+        </div>
+
+        <span class="spacer"></span>
+
+        <div class="nav-links">
+            <a mat-button class="nav-item" routerLink="/destinations" routerLinkActive="active">
+                Destinations
+            </a>
+            <a mat-button class="nav-item" routerLink="/dashboard" routerLinkActive="active">
+                <mat-icon inline>dashboard</mat-icon> Dashboard
+            </a>
+            <button mat-icon-button matTooltip="Account">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        </div>
+    </div>
 </mat-toolbar>

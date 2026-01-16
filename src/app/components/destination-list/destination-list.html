@@ -1,55 +1,79 @@
-<div class="container">
-    <h2>Explore Top Destinations</h2>
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>Discover Your Next Adventure</h1>
+        <p>Explore exotic destinations, book with ease, and create memories that last a lifetime.</p>
 
-    <div class="filter-bar">
-        <mat-form-field appearance="outline" class="search-field">
-            <mat-label>Search Places or Country</mat-label>
-            <input matInput [(ngModel)]="searchText" placeholder="Ex. Japan">
-            <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
+        <div class="search-container">
+            <mat-form-field appearance="outline" class="minimal-search">
+                <input matInput [(ngModel)]="searchText" placeholder="Where do you want to go?">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
 
-        <div class="rating-filter">
-            <label>Min Popularity (Rating): {{ minRating }}</label>
-            <mat-slider min="0" max="5" step="0.1" showTickMarks discrete>
-                <input matSliderThumb [(ngModel)]="minRating">
-            </mat-slider>
+<div class="container main-content">
+    <div class="section-header">
+        <h2>Trending Destinations</h2>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-value">500+</span>
+                <span class="stat-label">Destinations</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">100k+</span>
+                <span class="stat-label">Happy Travelers</span>
+            </div>
         </div>
     </div>
 
-    <div class="loading-state" *ngIf="!(destinations$ | async); else listContent">
-        <p>Loading amazing places...</p>
+    <div class="loading-state flex-center" *ngIf="!(destinations$ | async); else listContent">
+        <mat-spinner diameter="50"></mat-spinner>
+        <p>Finding the perfect places for you...</p>
     </div>
 
     <ng-template #listContent>
         <div class="grid">
-            <mat-card class="dest-card"
-                *ngFor="let dest of (destinations$ | async) | filterDestinations:searchText:minRating"
-                [ngStyle]="{'border-top': '4px solid ' + selectedColor}" [appHighlightTopRated]="dest.rating">
+            <mat-card class="dest-card anime-fade-in"
+                *ngFor="let dest of (destinations$ | async) | filterDestinations:searchText:minRating; let i = index"
+                [style.animation-delay]="i * 0.1 + 's'" [appHighlightTopRated]="dest.rating">
 
-                <img mat-card-image [src]="dest.imageUrl" [alt]="dest.name" class="card-image">
-                <mat-card-header>
-                    <div class="header-content">
-                        <mat-card-title>
-                            {{ dest.name }}
-                            <!-- Demo: Highlight Tokyo as a Promo -->
-                            <span *ngIf="dest.name === 'Tokyo'" appHighlightPromo>HOT DEAL</span>
-                        </mat-card-title>
-                        <mat-card-subtitle>{{ dest.country }}</mat-card-subtitle>
-                    </div>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>{{ dest.description }}</p>
+                <div class="image-wrapper">
+                    <img mat-card-image [src]="dest.imageUrl" [alt]="dest.name" class="card-image">
                     <div class="rating-badge" [ngClass]="getRatingColor(dest.rating)">
                         <mat-icon>star</mat-icon> {{ dest.rating }}
                     </div>
-                    <mat-chip-set aria-label="Tags">
-                        <mat-chip *ngFor="let tag of dest.tags">{{ tag }}</mat-chip>
-                    </mat-chip-set>
+                </div>
+
+                <mat-card-header>
+                    <mat-card-title>{{ dest.name }}</mat-card-title>
+                    <mat-card-subtitle>
+                        <mat-icon inline>location_on</mat-icon> {{ dest.country }}
+                    </mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <p class="description">{{ dest.description }}</p>
+                    <div class="tag-cloud">
+                        <mat-chip-row *ngFor="let tag of dest.tags">{{ tag }}</mat-chip-row>
+                    </div>
                 </mat-card-content>
-                <mat-card-actions>
-                    <button mat-button color="primary" [routerLink]="['/package', dest.id]">View Packages</button>
+
+                <mat-divider></mat-divider>
+
+                <mat-card-actions align="end">
+                    <button mat-flat-button color="primary" [routerLink]="['/package', dest.id]">
+                        Explore Packages
+                    </button>
                 </mat-card-actions>
             </mat-card>
+        </div>
+
+        <div class="no-results"
+            *ngIf="((destinations$ | async) | filterDestinations:searchText:minRating)?.length === 0">
+            <mat-icon>sentiment_dissatisfied</mat-icon>
+            <p>No destinations match your search criteria.</p>
+            <button mat-button color="accent" (click)="searchText=''; minRating=0">Clear Filters</button>
         </div>
     </ng-template>
 </div>

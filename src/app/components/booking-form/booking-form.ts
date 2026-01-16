@@ -80,6 +80,7 @@ export class BookingForm implements OnInit {
 
       const newBooking: any = {
         id: crypto.randomUUID(),
+        userId: 'u1', // Top-level ID for easier filtering
         user: { id: 'u1', firstName: 'Guest', lastName: 'User', email: formValue.email, role: 'Traveler' } as any,
         travelPackage: { id: pkg.id, name: pkg.name, price: pkg.price } as any,
         bookingDate: formValue.bookingDate,

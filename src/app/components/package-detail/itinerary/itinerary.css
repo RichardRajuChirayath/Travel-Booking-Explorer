@@ -1,0 +1,115 @@
+.itinerary-container {
+    padding: 10px 0;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: var(--text-primary);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 0;
+    opacity: 0;
+    animation: slideIn 0.5s forwards ease-out;
+}
+
+.timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    position: relative;
+}
+
+.day-number {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.marker-dot {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(63, 81, 181, 0.2);
+}
+
+.marker-dot mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: var(--primary-color);
+}
+
+.timeline-line {
+    width: 2px;
+    background: #e0e0e0;
+    flex-grow: 1;
+    margin: 4px 0;
+    position: absolute;
+    top: 80px;
+    bottom: -10px;
+}
+
+.timeline-content {
+    padding-bottom: 40px;
+    flex: 1;
+}
+
+.day-title {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.day-desc {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .timeline-marker {
+        min-width: 60px;
+    }
+
+    .marker-dot {
+        width: 40px;
+        height: 40px;
+    }
+
+    .marker-dot mat-icon {
+        font-size: 20px;
+    }
+}

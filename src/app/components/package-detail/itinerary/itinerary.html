@@ -1,8 +1,22 @@
-<h3>Travel Itinerary</h3>
-<div class="itinerary-list">
-    <p><strong>Day 1:</strong> Arrival and Welcome Dinner</p>
-    <p><strong>Day 2:</strong> City Highlights Tour</p>
-    <p><strong>Day 3:</strong> Optional Excursion or Free Time</p>
-    <p><strong>Day 4:</strong> Cultural Workshop</p>
-    <p><strong>Day 5:</strong> Departure</p>
+<div class="itinerary-container">
+    <h3>Plan of the Trip</h3>
+    <div class="timeline">
+        @for (day of itineraryData; track $index) {
+        <div class="timeline-item" [style.animation-delay]="$index * 0.15 + 's'">
+            <div class="timeline-marker">
+                <div class="day-number">Day {{ $index + 1 }}</div>
+                <div class="marker-dot">
+                    <mat-icon>{{ day.icon }}</mat-icon>
+                </div>
+                @if ($index < itineraryData.length - 1) { <div class="timeline-line">
+            </div>
+            }
+        </div>
+        <div class="timeline-content">
+            <h4 class="day-title">{{ day.title }}</h4>
+            <p class="day-desc">{{ day.desc }}</p>
+        </div>
+    </div>
+    }
+</div>
 </div>

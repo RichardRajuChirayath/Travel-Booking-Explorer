@@ -1,7 +1,38 @@
-<h3>Customer Reviews</h3>
-<div class="review-card">
-    <p>"An unforgettable trip! Everything was perfectly organized." - <em>Jane D.</em></p>
-</div>
-<div class="review-card">
-    <p>"Great value for money and the local guide was exceptional." - <em>Mark S.</em></p>
+<div class="reviews-container">
+    <div class="reviews-header">
+        <h3>What Travelers Say</h3>
+        <div class="overall-rating">
+            <span class="rating-num">4.9</span>
+            <div class="stars">
+                <mat-icon>star</mat-icon>
+                <mat-icon>star</mat-icon>
+                <mat-icon>star</mat-icon>
+                <mat-icon>star</mat-icon>
+                <mat-icon>star</mat-icon>
+            </div>
+            <span class="total-count">Based on 128 reviews</span>
+        </div>
+    </div>
+
+    <div class="reviews-list">
+        @for (review of reviews; track review.name) {
+        <mat-card class="review-card anime-fade-in">
+            <mat-card-header>
+                <img mat-card-avatar [src]="review.avatar" [alt]="review.name">
+                <mat-card-title>{{ review.name }}</mat-card-title>
+                <mat-card-subtitle>{{ review.date }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="review-rating">
+                    <mat-icon *ngFor="let s of getStars(review.rating)">star</mat-icon>
+                </div>
+                <p class="review-comment">"{{ review.comment }}"</p>
+            </mat-card-content>
+        </mat-card>
+        }
+    </div>
+
+    <div class="actions-footer">
+        <button mat-stroked-button color="primary">Write a Review</button>
+    </div>
 </div>

@@ -8,14 +8,22 @@ import { User, UserRole, AppUser } from '../models/user.model';
 })
 export class UserService {
     private http = inject(HttpClient);
-    private apiUrl = 'api/users';
+    private apiUrl = 'http://localhost:3001/users';
 
     private currentUserSubject = new BehaviorSubject<User | null>(null);
     currentUser$ = this.currentUserSubject.asObservable();
 
     constructor() {
         // Initial mock login check
-        const savedUser = localStorage.getItem('user');
+        let savedUser = localStorage.getItem('user');
+
+        // AUTO-LOGIN FOR DEMO if not logged in
+        if (!savedUser) {
+            const demoUser = new AppUser('u1', 'Guest', 'User', 'guest@example.com', UserRole.TRAVELER);
+            this.login('guest@example.com', 'demo').subscribe();
+            savedUser = JSON.stringify(demoUser);
+        }
+
         if (savedUser) {
             this.currentUserSubject.next(JSON.parse(savedUser));
         }

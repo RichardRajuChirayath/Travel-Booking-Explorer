@@ -1,8 +1,53 @@
-<h3>Package Overview</h3>
-<p>Discover the beauty and culture of this amazing destination. This package includes premium accommodation, guided
-    tours, and local experiences.</p>
-<ul>
-    <li>5-Star Hotels</li>
-    <li>All Breakfasts Included</li>
-    <li>Priority Access to Landmarks</li>
-</ul>
+@if (pkg(); as package) {
+<div class="overview-container anime-fade-in">
+    <section class="description-section">
+        <h3>About this Experience</h3>
+        <p class="main-desc">
+            Discover the beauty and culture of this amazing destination. This <strong>{{ package.durationDays }}-day
+                {{ package.tier }}</strong> package is meticulously crafted to provide you with the most authentic and
+            luxurious experience possible.
+        </p>
+    </section>
+
+    <mat-divider></mat-divider>
+
+    <section class="highlights-section">
+        <h3>What's Included</h3>
+        <div class="highlights-grid">
+            @for (service of package.includedServices; track service) {
+            <mat-card class="highlight-card">
+                <mat-card-content>
+                    <div class="service-icon">
+                        <mat-icon color="primary">{{ getIconForService(service) }}</mat-icon>
+                    </div>
+                    <span class="service-name">{{ service }}</span>
+                </mat-card-content>
+            </mat-card>
+            }
+        </div>
+    </section>
+
+    <mat-divider></mat-divider>
+
+    <section class="features-section">
+        <div class="feature-item">
+            <mat-icon class="feature-icon">verified</mat-icon>
+            <div class="feature-text">
+                <h4>Free Cancellation</h4>
+                <p>Cancel up to 24 hours in advance for a full refund.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <mat-icon class="feature-icon">support_agent</mat-icon>
+            <div class="feature-text">
+                <h4>24/7 Support</h4>
+                <p>Our travel experts are available around the clock to assist you.</p>
+            </div>
+        </div>
+    </section>
+</div>
+} @else {
+<div class="loading-state">
+    <p>Loading overview particulars...</p>
+</div>
+}

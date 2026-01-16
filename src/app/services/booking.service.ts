@@ -23,6 +23,7 @@ export class BookingService {
     }
 
     fetchUserBookings(userId: string): Observable<Booking[]> {
+        // Filter by top-level userId for better compatibility
         return this.http.get<Booking[]>(`${this.apiUrl}?userId=${userId}`).pipe(
             tap(bookings => this.bookingsSubject.next(bookings))
         );

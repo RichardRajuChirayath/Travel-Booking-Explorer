@@ -8,8 +8,9 @@ export enum PackageTier {
 
 export interface Package {
     id: string;
+    destinationId: string;
     name: string;
-    destination: Destination;
+    destination?: Destination;
     price: number;
     durationDays: number;
     startDate: Date;
@@ -22,8 +23,9 @@ export interface Package {
 
 export class TravelPackage implements Package {
     id: string;
+    destinationId: string;
     name: string;
-    destination: Destination;
+    destination?: Destination;
     price: number;
     durationDays: number;
     startDate: Date;
@@ -35,6 +37,7 @@ export class TravelPackage implements Package {
 
     constructor(data: Package) {
         this.id = data.id;
+        this.destinationId = data.destinationId;
         this.name = data.name;
         this.destination = data.destination;
         this.price = data.price;

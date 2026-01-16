@@ -1,102 +1,271 @@
 {
-    "destinations": [
-        {
-            "id": "d1",
-            "name": "Paris",
-            "country": "France",
-            "description": "The city of lights and iconic landmarks.",
-            "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
-            "rating": 4.8,
-            "tags": [
-                "romantic",
-                "culture",
-                "history"
-            ]
-        },
-        {
-            "id": "d2",
-            "name": "Tokyo",
-            "country": "Japan",
-            "description": "A blend of ultra-modern and traditional culture.",
-            "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf",
-            "rating": 4.9,
-            "tags": [
-                "modern",
-                "food",
-                "tradition"
-            ]
-        },
-        {
-            "id": "d3",
-            "name": "Bali",
-            "country": "Indonesia",
-            "description": "Tropical paradise with stunning beaches and temples.",
-            "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
-            "rating": 4.7,
-            "tags": [
-                "beach",
-                "relax",
-                "nature"
-            ]
-        }
-    ],
-    "packages": [
-        {
-            "id": "d1",
-            "destinationId": "d1",
-            "name": "Paris Explorer",
-            "price": 1200,
-            "durationDays": 5,
-            "tier": "Standard",
-            "maxCapacity": 20,
-            "availableSlots": 12,
-            "includedServices": [
-                "Flight",
-                "Hotel",
-                "Breakfast"
-            ]
-        },
-        {
-            "id": "d2",
-            "destinationId": "d2",
-            "name": "Tokyo High Tech",
-            "price": 2500,
-            "durationDays": 7,
-            "tier": "Luxury",
-            "maxCapacity": 10,
-            "availableSlots": 4,
-            "includedServices": [
-                "Flight",
-                "Hotel",
-                "Dinner",
-                "Guide"
-            ]
-        },
-        {
-            "id": "d3",
-            "destinationId": "d3",
-            "name": "Bali Paradise",
-            "price": 950,
-            "durationDays": 6,
-            "tier": "Budget",
-            "maxCapacity": 15,
-            "availableSlots": 8,
-            "includedServices": [
-                "Flight",
-                "Villa",
-                "Breakfast",
-                "Snorkeling"
-            ]
-        }
-    ],
-    "users": [
-        {
-            "id": "u1",
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john.doe@example.com",
-            "role": "Traveler"
-        }
-    ],
-    "bookings": []
+  "destinations": [
+    {
+      "id": "d1",
+      "name": "Paris",
+      "country": "France",
+      "description": "Experience the romance of the Eiffel Tower, world-class art at the Louvre, and charming cafe culture.",
+      "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
+      "rating": 4.8,
+      "tags": [
+        "romantic",
+        "art",
+        "gastronomy"
+      ]
+    },
+    {
+      "id": "d2",
+      "name": "Tokyo",
+      "country": "Japan",
+      "description": "Dive into the neon-lit streets of Shibuya, ancient temples of Asakusa, and exquisite sushi.",
+      "imageUrl": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80",
+      "rating": 4.9,
+      "tags": [
+        "technology",
+        "culture",
+        "foodie"
+      ]
+    },
+    {
+      "id": "d3",
+      "name": "Bali",
+      "country": "Indonesia",
+      "description": "Relax on pristine beaches, explore lush rice terraces in Ubud, and discover spiritual tranquility.",
+      "imageUrl": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80",
+      "rating": 4.7,
+      "tags": [
+        "beach",
+        "nature",
+        "wellness"
+      ]
+    },
+    {
+      "id": "d4",
+      "name": "Maldives",
+      "country": "Maldives",
+      "description": "Crystal clear turquoise waters, white sand beaches, and luxurious overwater bungalows await you.",
+      "imageUrl": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80",
+      "rating": 4.9,
+      "tags": [
+        "luxury",
+        "ocean",
+        "privacy"
+      ]
+    },
+    {
+      "id": "d5",
+      "name": "New York City",
+      "country": "USA",
+      "description": "The city that never sleeps. Times Square, Central Park, Broadway to the Statue of Liberty.",
+      "imageUrl": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
+      "rating": 4.6,
+      "tags": [
+        "urban",
+        "nightlife",
+        "entertainment"
+      ]
+    },
+    {
+      "id": "d6",
+      "name": "Switzerland",
+      "country": "Switzerland",
+      "description": "Breathtaking Alpine landscapes, pristine lakes, and charming mountain villages for your dream escape.",
+      "imageUrl": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80",
+      "rating": 4.8,
+      "tags": [
+        "nature",
+        "hiking",
+        "adventure"
+      ]
+    },
+    {
+      "id": "d7",
+      "name": "Sydney",
+      "country": "Australia",
+      "description": "Discover the iconic Sydney Opera House, Harbour Bridge, and sun-kissed Bondi Beach.",
+      "imageUrl": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80",
+      "rating": 4.8,
+      "tags": [
+        "harbour",
+        "beaches",
+        "adventure"
+      ]
+    },
+    {
+      "id": "d8",
+      "name": "Rome",
+      "country": "Italy",
+      "description": "Step back in time to the Roman Empire. The Colosseum, Vatican City, and incredible pasta.",
+      "imageUrl": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+      "rating": 4.9,
+      "tags": [
+        "history",
+        "food",
+        "ancient"
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "id": "d1",
+      "destinationId": "d1",
+      "name": "Paris Explorer",
+      "price": 150000,
+      "durationDays": 5,
+      "tier": "Standard",
+      "maxCapacity": 20,
+      "availableSlots": 12,
+      "includedServices": [
+        "Round-trip Flight",
+        "4-Star Hotel",
+        "Daily Breakfast",
+        "Louvre Tickets"
+      ]
+    },
+    {
+      "id": "d2",
+      "destinationId": "d2",
+      "name": "Tokyo High Tech & Tradition",
+      "price": 250000,
+      "durationDays": 7,
+      "tier": "Luxury",
+      "maxCapacity": 10,
+      "availableSlots": 4,
+      "includedServices": [
+        "Direct Flight",
+        "5-Star Hotel",
+        "Omakase Dinner",
+        "Private Guide",
+        "Bullet Train Pass"
+      ]
+    },
+    {
+      "id": "d3",
+      "destinationId": "d3",
+      "name": "Bali Paradise Retreat",
+      "price": 80000,
+      "durationDays": 6,
+      "tier": "Budget",
+      "maxCapacity": 15,
+      "availableSlots": 8,
+      "includedServices": [
+        "Flight",
+        "Private Villa",
+        "Floating Breakfast",
+        "Snorkeling Tour"
+      ]
+    },
+    {
+      "id": "d4",
+      "destinationId": "d4",
+      "name": "Maldives Luxury Overwater",
+      "price": 320000,
+      "durationDays": 5,
+      "tier": "Luxury",
+      "maxCapacity": 8,
+      "availableSlots": 2,
+      "includedServices": [
+        "Sea Plane Transfer",
+        "Overwater Villa",
+        "All-Inclusive",
+        "Dolphin Cruise"
+      ]
+    },
+    {
+      "id": "d5",
+      "destinationId": "d5",
+      "name": "NYC City Break",
+      "price": 180000,
+      "durationDays": 4,
+      "tier": "Standard",
+      "maxCapacity": 25,
+      "availableSlots": 15,
+      "includedServices": [
+        "Flight",
+        "Times Square Hotel",
+        "Broadway Show Tickets",
+        "City Pass"
+      ]
+    },
+    {
+      "id": "d6",
+      "destinationId": "d6",
+      "name": "Switzerland Alpine Dream",
+      "price": 350000,
+      "durationDays": 5,
+      "tier": "Luxury",
+      "maxCapacity": 12,
+      "availableSlots": 6,
+      "includedServices": [
+        "Train Pass",
+        "Mountain Resort",
+        "Fondue Night",
+        "Paragliding"
+      ]
+    },
+    {
+      "id": "d7",
+      "destinationId": "d7",
+      "name": "Sydney Harbour Experience",
+      "price": 220000,
+      "durationDays": 6,
+      "tier": "Standard",
+      "maxCapacity": 18,
+      "availableSlots": 10,
+      "includedServices": [
+        "Flight",
+        "Harbour View Hotel",
+        "Bridge Climb",
+        "Opera House Tour"
+      ]
+    },
+    {
+      "id": "d8",
+      "destinationId": "d8",
+      "name": "Roman Holiday",
+      "price": 190000,
+      "durationDays": 5,
+      "tier": "Standard",
+      "maxCapacity": 20,
+      "availableSlots": 5,
+      "includedServices": [
+        "Flight",
+        "City Center Hotel",
+        "Colosseum Skip-the-Line",
+        "Vatican Tour"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "u1",
+      "firstName": "Guest",
+      "lastName": "User",
+      "email": "guest@example.com",
+      "role": "Traveler"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "62d936da-f1f2-4c57-9b2b-34bff075b680",
+      "userId": "u1",
+      "user": {
+        "id": "u1",
+        "firstName": "Guest",
+        "lastName": "User",
+        "email": "vaibhav@gmail.com",
+        "role": "Traveler"
+      },
+      "travelPackage": {
+        "id": "d3",
+        "name": "Bali Paradise Retreat",
+        "price": 80000
+      },
+      "bookingDate": "2026-01-28T18:30:00.000Z",
+      "status": "Pending",
+      "totalAmount": 320000,
+      "numberOfTravelers": 4,
+      "specialRequests": "Vegetarian meals preferred"
+    }
+  ]
 }

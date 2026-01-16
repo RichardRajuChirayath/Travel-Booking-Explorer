@@ -8,6 +8,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDividerModule } from '@angular/material/divider';
 import { RouterLink } from '@angular/router';
 import { DestinationService } from '../../services/destination.service';
 import { Destination } from '../../models/destination.model';
@@ -29,6 +31,8 @@ import { HighlightPromoDirective } from '../../directives/highlight-promo.direct
     MatInputModule,
     MatFormFieldModule,
     MatSliderModule,
+    MatProgressSpinnerModule,
+    MatDividerModule,
     RouterLink,
     FilterDestinationsPipe,
     HighlightTopRatedDirective,
