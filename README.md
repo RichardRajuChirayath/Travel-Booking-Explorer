@@ -110,6 +110,4 @@ Contributions are what make the open source community such an amazing place to l
 
 ---
 
-<p align="center">
-  Made with ❤️ by <b>Richard Raju Chirayath</b>
-</p>
+
